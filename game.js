@@ -2,14 +2,14 @@ const RAD = Math.PI / 180;
 const scrn = document.getElementById("canvas");
 const sctx = scrn.getContext("2d");
 scrn.tabIndex = 1;
-const bgMusic = new Audio();
-bgMusic.src = "sfx/song.wav";
-bgMusic.loop = true; 
+
+
 scrn.addEventListener("click", () => {
   switch (state.curr) {
     case state.getReady:
       state.curr = state.Play;
       SFX.start.play();
+      SFX.bgMusic.play();
       break;
     case state.Play:
       bird.flap();
@@ -58,16 +58,13 @@ const state = {
 };
 // loop the background music
 
-function playBackgroundMusic() {
-  bgMusic.play();
-}
-
 const SFX = {
   start: new Audio(),
   flap: new Audio(),
   score: new Audio(),
   hit: new Audio(),
   die: new Audio(),
+  bgMusic:new Audio(),
   played: false,
 };
 const gnd = {
@@ -318,6 +315,7 @@ SFX.flap.src = "sfx/flap.wav";
 SFX.score.src = "sfx/score.wav";
 SFX.hit.src = "sfx/hit.wav";
 SFX.die.src = "sfx/die.wav";
+SFX.bgMusic.src = "sfx/bgmusic.wav";
 
 function gameLoop() {
   update();
