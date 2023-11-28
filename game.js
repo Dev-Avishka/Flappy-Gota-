@@ -136,7 +136,11 @@ const bird = {
   draw: function () {
     let h = this.animations[0].sprite.height;
     let w = this.animations[0].sprite.width;
-    sctx.drawImage(this.animations[0].sprite, this.x - w / 2, this.y - h / 2);
+    sctx.save();
+    sctx.translate(this.x, this.y);
+    sctx.rotate(this.rotatation * RAD);
+    sctx.drawImage(this.animations[0].sprite, -w / 2, -h / 2);
+    sctx.restore();
   },
   update: function () {
     let r = parseFloat(this.animations[0].sprite.width) / 2;
