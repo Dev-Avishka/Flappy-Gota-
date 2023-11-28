@@ -9,7 +9,6 @@ scrn.addEventListener("click", () => {
     case state.getReady:
       state.curr = state.Play;
       SFX.start.play();
-      SFX.bgMusic.play();
       break;
     case state.Play:
       bird.flap();
@@ -73,7 +72,7 @@ const gnd = {
   y: 0,
   draw: function () {
     this.y = parseFloat(scrn.height - this.sprite.height);
-    sctx.drawImage(this.sprite, this.x, this.y);
+    sctx.drawImage(this.sprite, this.x, this.y+100);
   },
   update: function () {
     if (state.curr != state.Play) return;
@@ -87,7 +86,7 @@ const bg = {
   y: 0,
   draw: function () {
     y = parseFloat(scrn.height - this.sprite.height);
-    sctx.drawImage(this.sprite, this.x, y);
+    sctx.drawImage(this.sprite, this.x-300, y);
   },
 };
 const pipe = {
@@ -299,7 +298,8 @@ const UI = {
 };
 
 gnd.sprite.src = "img/ground.png";
-bg.sprite.src = "img/BG.png";
+bg.sprite.src = "img/BG.jpeg";
+
 pipe.top.sprite.src = "img/toppipe.png";
 pipe.bot.sprite.src = "img/botpipe.png";
 UI.gameOver.sprite.src = "img/go.png";
