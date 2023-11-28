@@ -2,6 +2,9 @@ const RAD = Math.PI / 180;
 const scrn = document.getElementById("canvas");
 const sctx = scrn.getContext("2d");
 scrn.tabIndex = 1;
+const bgMusic = new Audio();
+bgMusic.src = "sfx/song.wav";
+bgMusic.loop = true; 
 scrn.addEventListener("click", () => {
   switch (state.curr) {
     case state.getReady:
@@ -24,11 +27,11 @@ scrn.addEventListener("click", () => {
 
 scrn.onkeydown = function keyDown(e) {
   if (e.keyCode == 32 || e.keyCode == 87 || e.keyCode == 38) {
-    // Space Key or W key or arrow up
     switch (state.curr) {
       case state.getReady:
         state.curr = state.Play;
         SFX.start.play();
+        playBackgroundMusic();
         break;
       case state.Play:
         bird.flap();
@@ -53,6 +56,12 @@ const state = {
   Play: 1,
   gameOver: 2,
 };
+// loop the background music
+
+function playBackgroundMusic() {
+  bgMusic.play();
+}
+
 const SFX = {
   start: new Audio(),
   flap: new Audio(),
