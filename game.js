@@ -71,8 +71,8 @@ const gnd = {
   x: 0,
   y: 0,
   draw: function () {
-    this.y = parseFloat(scrn.height - this.sprite.height);
-    sctx.drawImage(this.sprite, this.x, this.y+100);
+    this.y = parseFloat(scrn.height - this.sprite.height)+100;
+    sctx.drawImage(this.sprite, this.x, this.y);
   },
   update: function () {
     if (state.curr != state.Play) return;
