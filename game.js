@@ -30,7 +30,6 @@ scrn.onkeydown = function keyDown(e) {
       case state.getReady:
         state.curr = state.Play;
         SFX.start.play();
-        playBackgroundMusic();
         break;
       case state.Play:
         bird.flap();
@@ -316,6 +315,7 @@ SFX.score.src = "sfx/score.wav";
 SFX.hit.src = "sfx/hit.wav";
 SFX.die.src = "sfx/die.wav";
 SFX.bgMusic.src = "sfx/song.wav";
+
 
 function gameLoop() {
   update();
