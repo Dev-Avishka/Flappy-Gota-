@@ -85,13 +85,13 @@ const bg = {
   y: 0,
   draw: function () {
     y = parseFloat(scrn.height - this.sprite.height);
-    sctx.drawImage(this.sprite, this.x-300, y);
+    sctx.drawImage(this.sprite, this.x-200, y-60);
   },
 };
 const pipe = {
   top: { sprite: new Image() },
   bot: { sprite: new Image() },
-  gap: 100,
+  gap: 120,
   moved: true,
   pipes: [],
   draw: function () {
