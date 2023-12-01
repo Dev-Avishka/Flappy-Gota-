@@ -1,9 +1,16 @@
-#canvas
-{
-    background-color:#30c0df;
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-color: #30c0df;
     border: 2px solid black;
     display: block;
-    margin: auto;
-    padding: auto;
-    
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width if necessary */
+    height: auto; /* Maintain aspect ratio */
 }
