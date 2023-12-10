@@ -85,7 +85,7 @@ const bg = {
   y: 0,
   draw: function () {
     y = parseFloat(scrn.height - this.sprite.height);
-    sctx.drawImage(this.sprite, this.x-200, y-60);
+    sctx.drawImage(this.sprite, this.x-200, y-70);
   },
 };
 const pipe = {
